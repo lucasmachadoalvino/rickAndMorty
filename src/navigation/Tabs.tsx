@@ -1,14 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {CharacterScreen} from '../screens/Character';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {LocationScreen} from '../screens/Location/Location';
 
-import {EpisodeScreen} from '../screens/Episode';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {EpisodeScreen} from '../screens/Episode';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,14 +57,7 @@ function Tabs() {
 
 const styles = StyleSheet.create({
   bar: {
-    // position: 'absolute',
     backgroundColor: '#97ce4c',
-    // borderTopWidth: 0,
-    // bottom: 20,
-    // left: 10,
-    // right: 10,
-    // paddingBottom: 1,
-    // borderRadius: 20,
   },
 });
 

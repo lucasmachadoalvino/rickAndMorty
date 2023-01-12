@@ -1,10 +1,16 @@
 import {useInfiniteQuery, UseInfiniteQueryResult} from 'react-query';
-import {api} from '../../../api';
-import {Characters} from '../interface';
+import {api} from '../../api';
+import {Character, Characters} from '../../types/character';
 
 async function getCharacters(pageParam: number) {
   const result = await api.get(`character/?page=${pageParam}`);
-  return result.data;
+
+  const results = result.data.results.map((character: Character) => ({
+    ...character,
+    episode: character.episode.map((ep: string) => ep.split('/').pop()),
+  }));
+
+  return {...result.data, results: results};
 }
 
 export function useGetCharacters(): UseInfiniteQueryResult<Characters> {

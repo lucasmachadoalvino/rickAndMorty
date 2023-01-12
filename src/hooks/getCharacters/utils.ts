@@ -1,5 +1,5 @@
 import {InfiniteData} from 'react-query';
-import {Character, Characters} from './interface';
+import {Character, Characters} from '../../types/character';
 
 export function getDataFromPages(
   list: InfiniteData<Characters> | undefined,

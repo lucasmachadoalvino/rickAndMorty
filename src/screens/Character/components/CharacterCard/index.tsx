@@ -5,9 +5,20 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {Character} from '../../interface';
 import {Container, Content, InfoContent, Name, Persona, Tag} from './styles';
 
-export function CharacterCard({id, name, status, species, image}: Character) {
+interface CharacterCardProps extends Character {
+  onCharacterPress: () => void;
+}
+
+export function CharacterCard({
+  id,
+  name,
+  status,
+  species,
+  image,
+  onCharacterPress,
+}: CharacterCardProps) {
   return (
-    <Container>
+    <Container onPress={onCharacterPress}>
       <Persona
         source={{
           uri: image,
