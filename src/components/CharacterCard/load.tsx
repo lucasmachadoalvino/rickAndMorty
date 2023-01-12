@@ -1,6 +1,6 @@
 import React from 'react';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {Divider} from '../../../../components/Divider';
+import {Divider} from '../Divider';
 import {Container} from './styles';
 
 export function CharacterCardLoad() {

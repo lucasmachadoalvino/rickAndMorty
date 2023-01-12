@@ -2,7 +2,7 @@ import {padStart} from 'lodash';
 import React from 'react';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Character} from '../../interface';
+import {Character} from '../../types/character';
 import {Container, Content, InfoContent, Name, Persona, Tag} from './styles';
 
 interface CharacterCardProps extends Character {

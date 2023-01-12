@@ -2,14 +2,14 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
 import {FlatList, View} from 'react-native';
+import {CharacterCard} from '../../components/CharacterCard';
+import {CharacterCardLoad} from '../../components/CharacterCard/load';
 import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
 import {useGetCharacters} from '../../hooks/getCharacters/useGetCharacters';
 import {getDataFromPages} from '../../hooks/getCharacters/utils';
 import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
-import {CharacterCard} from './components/CharacterCard';
-import {CharacterCardLoad} from './components/CharacterCard/load';
 import {Container} from './styles';
 
 export function CharacterScreen() {
