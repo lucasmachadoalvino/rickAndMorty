@@ -8,6 +8,7 @@ export function CardLoad() {
   const theme = useTheme();
   return (
     <>
+      <Divider />
       <Container>
         <SkeletonPlaceholder>
           <SkeletonPlaceholder.Item flexDirection="row">
@@ -25,7 +26,6 @@ export function CardLoad() {
           </SkeletonPlaceholder.Item>
         </SkeletonPlaceholder>
       </Container>
-      <Divider />
     </>
   );
 }

@@ -2,10 +2,11 @@ import {padStart} from 'lodash';
 import React from 'react';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Episode} from '../../types/episodes';
 import {Container, Content, InfoContent, Name} from './styles';
 
-interface CardProps extends Episode {
+interface CardProps {
+  name: string;
+  id: string;
   onCardPress: () => void;
 }
 

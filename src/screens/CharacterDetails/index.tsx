@@ -6,7 +6,7 @@ import {CardLoad} from '../../components/Card/load';
 
 import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
-import {useGetEpisodes} from '../../hooks/getEpisode/useGetEpisode';
+import {useGetEpisodes} from '../../hooks/getEpisodes/useGetEpisodes';
 import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
 import {
@@ -34,7 +34,11 @@ export function CharacterDetails({route, navigation}: Props) {
       <FlatList
         data={data}
         renderItem={({item}) => (
-          <Card {...item} onCardPress={() => console.warn(item)} />
+          <Card
+            name={item.name}
+            id={item.id}
+            onCardPress={() => console.warn(item)}
+          />
         )}
         ItemSeparatorComponent={Divider}
       />

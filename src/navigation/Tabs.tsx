@@ -5,7 +5,7 @@ import {CharacterScreen} from '../screens/Character';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {LocationScreen} from '../screens/Location/Location';
+import {LocationScreen} from '../screens/Location';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {EpisodeScreen} from '../screens/Episode';
