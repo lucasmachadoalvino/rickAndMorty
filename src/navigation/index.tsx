@@ -4,12 +4,13 @@ import React from 'react';
 import {CharacterDetails} from '../screens/CharacterDetails';
 import {LocationDetail} from '../screens/LocationDetail';
 import {Character} from '../types/character';
+import {Location} from '../types/location';
 import Tabs from './Tabs';
 
 export type RootStackParamList = {
   Home: undefined;
+  LocationDetail: {data: Location};
   CharacterDetails: {data: Character};
-  LocationDetail: undefined;
 };
 
 export function AppNavigator() {
@@ -26,8 +27,8 @@ export function AppNavigator() {
           options={{headerShown: false}}
         />
 
-        <Stack.Screen name="CharacterDetails" component={CharacterDetails} />
         <Stack.Screen name="LocationDetail" component={LocationDetail} />
+        <Stack.Screen name="CharacterDetails" component={CharacterDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -20,7 +20,7 @@ import {
 type Props = NativeStackScreenProps<RootStackParamList, 'CharacterDetails'>;
 
 export function CharacterDetails({route, navigation}: Props) {
-  const {id, name, species, gender, origin, location, image, episode} =
+  const {name, species, gender, origin, location, image, episode} =
     route.params.data;
 
   const {data, isLoading} = useGetEpisodes(episode);

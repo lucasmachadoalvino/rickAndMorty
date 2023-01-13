@@ -1,3 +1,5 @@
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
 import {FlatList} from 'react-native';
 import {Card} from '../../components/Card';
@@ -6,12 +8,16 @@ import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
 import {useGetLocations} from '../../hooks/getLocations/useGetLocations';
 import {getDataFromPages} from '../../hooks/getLocations/utils';
+import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
 import {Container} from './styles';
 
 export function LocationScreen() {
   const {data, isFetchingNextPage, hasNextPage, fetchNextPage, isLoading} =
     useGetLocations();
+
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const locations = getDataFromPages(data);
 
   function renderContent() {
@@ -28,7 +34,9 @@ export function LocationScreen() {
           <Card
             name={item.name}
             id={item.id}
-            onCardPress={() => console.warn(item)}
+            onCardPress={() =>
+              navigation.navigate('LocationDetail', {data: item})
+            }
           />
         )}
         onEndReached={() =>
