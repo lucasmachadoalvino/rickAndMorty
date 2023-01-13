@@ -6,7 +6,7 @@ import {CardLoad} from '../../components/Card/load';
 
 import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
-import {useGetEpisodes} from '../../hooks/getEpisodes/useGetEpisodes';
+import {useGetEpisodes} from '../../hooks/useGetEpisodes/useGetEpisodes';
 import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
 import {

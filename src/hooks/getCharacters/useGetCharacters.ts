@@ -3,11 +3,11 @@ import {api} from '../../api';
 import {Character, Characters} from '../../types/character';
 
 async function getCharacters(pageParam: number, ids?: string[]) {
-  let url = 'character/?page=${pageParam}';
+  // let url = 'character/?page=${pageParam}';
 
-  if (ids) {
-    url = `character/[${ids.join()}]`;
-  }
+  // if (ids) {
+  //   url = `character/[${ids.join()}]`;
+  // }
 
   const result = await api.get(`character/?page=${pageParam}`);
 

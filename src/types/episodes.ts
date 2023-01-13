@@ -7,3 +7,13 @@ export interface Episode {
   url: string;
   created: string;
 }
+
+export interface Episodes {
+  info: {
+    count: number;
+    pages: number;
+    next: string;
+    prev: string;
+  };
+  results: Episode[];
+}
