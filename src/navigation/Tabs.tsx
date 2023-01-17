@@ -19,7 +19,6 @@ function Tabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.bar,
-        tabBarShowLabel: false,
         tabBarActiveTintColor: '#e89ac7',
         tabBarInactiveTintColor: '#44281d',
       }}>
@@ -27,6 +26,7 @@ function Tabs() {
         name="LocationScreen"
         component={LocationScreen}
         options={{
+          tabBarLabel: 'Locations',
           tabBarIcon: ({color}) => (
             <Ionicons name="planet" size={25} color={color} />
           ),
@@ -37,6 +37,7 @@ function Tabs() {
         name="CharacterScreen"
         component={CharacterScreen}
         options={{
+          tabBarLabel: 'Characters',
           tabBarIcon: ({color}) => (
             <Icon name="users" size={20} color={color} />
           ),
@@ -46,6 +47,7 @@ function Tabs() {
         name="EpisodeScreen"
         component={EpisodeScreen}
         options={{
+          tabBarLabel: 'Episodes',
           tabBarIcon: ({color}) => (
             <MaterialIcons name="movie" size={25} color={color} />
           ),

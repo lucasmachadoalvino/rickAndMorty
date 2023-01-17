@@ -5,8 +5,7 @@ import {CharacterCard} from '../../components/CharacterCard';
 import {CharacterCardLoad} from '../../components/CharacterCard/load';
 import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
-import {useGetCharacters} from '../../hooks/getCharacters/useGetCharacters';
-import {getDataFromPages} from '../../hooks/getCharacters/utils';
+import {useGetCharacters} from '../../hooks/useGetCharacters/useGetEpisodes';
 import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
 import {Container, InfoContent, Information, Title} from './styles';
@@ -18,10 +17,6 @@ export function LocationDetail({route, navigation}: Props) {
 
   const {data, isLoading} = useGetCharacters(residents);
 
-  const residentsList = getDataFromPages(data);
-
-  console.log('residentsList: ', residentsList);
-
   function renderContent() {
     if (isLoading) {
       return getArrayOfNumber(8).map(index => (
@@ -32,7 +27,7 @@ export function LocationDetail({route, navigation}: Props) {
     return (
       <FlatList
         ItemSeparatorComponent={Divider}
-        data={residentsList}
+        data={data}
         keyExtractor={item => item?.id}
         renderItem={({item}) => (
           <CharacterCard
@@ -48,7 +43,11 @@ export function LocationDetail({route, navigation}: Props) {
 
   return (
     <Container>
-      <Header isBackVisible onBackPress={navigation.goBack} />
+      <Header
+        isBackVisible
+        onBackPress={navigation.goBack}
+        title={'Location Detail'}
+      />
 
       <InfoContent>
         <Information>-Name: {name}</Information>

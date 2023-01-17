@@ -6,19 +6,19 @@ import {CharacterCard} from '../../components/CharacterCard';
 import {CharacterCardLoad} from '../../components/CharacterCard/load';
 import {Divider} from '../../components/Divider';
 import {Header} from '../../components/Header';
-import {useGetCharacters} from '../../hooks/getCharacters/useGetCharacters';
-import {getDataFromPages} from '../../hooks/getCharacters/utils';
+import {useGetAllCharacters} from '../../hooks/useGetAllCharacters/useGetAllCharacters';
+import {getDataFromAllCharactersPages} from '../../hooks/useGetAllCharacters/utils';
 import {RootStackParamList} from '../../navigation';
 import {getArrayOfNumber} from '../../utils/arrayUtils';
 import {Container} from './styles';
 
 export function CharacterScreen() {
   const {data, isFetchingNextPage, hasNextPage, fetchNextPage, isLoading} =
-    useGetCharacters();
+    useGetAllCharacters();
 
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-  const characters = getDataFromPages(data);
+  const characters = getDataFromAllCharactersPages(data);
 
   function renderContent() {
     if (isLoading) {

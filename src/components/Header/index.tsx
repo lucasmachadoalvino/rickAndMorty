@@ -5,19 +5,26 @@ import {Button, Container, Content, Logo, Title} from './styles';
 interface HeaderProps {
   isBackVisible?: boolean;
   onBackPress?: () => void;
+  title?: string;
 }
 
-export function Header({isBackVisible = false, onBackPress}: HeaderProps) {
+export function Header({
+  isBackVisible = false,
+  onBackPress,
+  title = 'Rick and Morty',
+}: HeaderProps) {
   return (
     <Container>
       {isBackVisible && (
-        <Button onPress={onBackPress}>
+        <Button
+          onPress={onBackPress}
+          hitSlop={{top: 12, bottom: 12, left: 12, right: 12}}>
           <Icon name="angle-left" size={30} />
         </Button>
       )}
       <Content>
-        <Logo source={require('../../assets/icon.png')} />
-        <Title>Rick and Morty</Title>
+        {!isBackVisible && <Logo source={require('../../assets/icon.png')} />}
+        <Title>{title}</Title>
       </Content>
     </Container>
   );

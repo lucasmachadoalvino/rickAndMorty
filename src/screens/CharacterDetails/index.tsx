@@ -23,6 +23,8 @@ export function CharacterDetails({route, navigation}: Props) {
   const {name, species, gender, origin, location, image, episode} =
     route.params.data;
 
+  console.log('episode: ', episode);
+
   const {data, isLoading} = useGetEpisodes(episode);
 
   function renderContent() {
@@ -47,7 +49,11 @@ export function CharacterDetails({route, navigation}: Props) {
 
   return (
     <Container>
-      <Header isBackVisible onBackPress={navigation.goBack} />
+      <Header
+        isBackVisible
+        onBackPress={navigation.goBack}
+        title="Character Details"
+      />
       <InfoContainer>
         <InfoContent>
           <Information>Name: {name}</Information>

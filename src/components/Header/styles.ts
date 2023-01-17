@@ -4,11 +4,12 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex-direction: row;
   margin-bottom: ${({theme}) => theme.spacing.large}px;
-  align-items: center;
   padding: 0 ${({theme}) => theme.spacing.large}px;
 `;
 
-export const Button = styled(RectButton)``;
+export const Button = styled(RectButton)`
+  margin-right: ${({theme}) => theme.spacing.large}px;
+`;
 
 export const Content = styled.View`
   flex-direction: row;

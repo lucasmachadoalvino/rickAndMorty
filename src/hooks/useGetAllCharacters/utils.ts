@@ -1,7 +1,7 @@
 import {InfiniteData} from 'react-query';
 import {Character, Characters} from '../../types/character';
 
-export function getDataFromPages(
+export function getDataFromAllCharactersPages(
   list: InfiniteData<Characters> | undefined,
 ): Character[] {
   if (!list) return [];

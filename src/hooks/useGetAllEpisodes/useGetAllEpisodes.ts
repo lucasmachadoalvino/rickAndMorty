@@ -5,17 +5,17 @@ import {Episode, Episodes} from '../../types/episodes';
 async function getEpisodes(pageParam: number) {
   const result = await api.get(`episode/?page=${pageParam}`);
 
-  const results = result.data.results.map((episode: Episode) => ({
+  const resultsNormalized = result.data.results.map((episode: Episode) => ({
     ...episode,
     characters: episode.characters.map((link: string) => link.split('/').pop()),
   }));
 
-  return {...result.data, results};
+  return {...result.data, results: resultsNormalized};
 }
 
 export function useGetAllEpisodes(): UseInfiniteQueryResult<Episodes> {
   return useInfiniteQuery(
-    ['AllEpisodes'],
+    ['allEpisodes'],
     async ({pageParam = 1}) => await getEpisodes(pageParam),
     {
       getNextPageParam: lastPage =>
