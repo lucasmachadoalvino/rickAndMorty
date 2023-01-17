@@ -23,8 +23,6 @@ export function CharacterDetails({route, navigation}: Props) {
   const {name, species, gender, origin, location, image, episode} =
     route.params.data;
 
-  console.log('episode: ', episode);
-
   const {data, isLoading} = useGetEpisodes(episode);
 
   function renderContent() {
@@ -39,7 +37,9 @@ export function CharacterDetails({route, navigation}: Props) {
           <Card
             name={item.name}
             id={item.id}
-            onCardPress={() => console.warn(item)}
+            onCardPress={() =>
+              navigation.navigate('EpisodeDetails', {data: item})
+            }
           />
         )}
         ItemSeparatorComponent={Divider}
